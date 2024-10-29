@@ -328,6 +328,7 @@
   .card img {
       width: 200px;
       height: 200px;
+      border-radius: 2%;
       margin-bottom: 1rem;
   }
 
