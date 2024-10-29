@@ -27,7 +27,7 @@
   /*HEADER CABEÇALHO*/
   header {
       background-color: var(--color1-blue);
-      padding: 3px;
+      padding: 3px 0;
       position: fixed;
       width: 100%;
       z-index: 1000;
@@ -38,7 +38,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1180px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 0.8rem;
   }
@@ -292,7 +292,7 @@
 
   /*SERVIÇOS*/
   .servicos {
-      padding: 5rem 2rem;
+      padding: 5rem 0;
       max-width: 1200px;
       margin: 0 auto;
   }
