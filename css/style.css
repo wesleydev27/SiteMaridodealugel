@@ -19,7 +19,10 @@
 
   body {
       background: var(--color-cinzaclaro);
+      color: var(--color5-black);
   }
+
+
 
   /*HEADER CABEÇALHO*/
   header {
