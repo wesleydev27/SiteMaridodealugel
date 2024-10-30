@@ -1,4 +1,63 @@
 /* RESPONSIVIDADE */
+
+/* Para telas menores que 767px */
+@media (max-width: 767px) {
+    .content-section-123 {
+        padding: 40px 0;
+    }
+
+    .margem-abaixo {
+        margin-bottom: 20px;
+    }
+
+    .pesquisa {
+        width: 100%;
+    }
+}
+
+/* Para telas de 768px até 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+    .menu {
+        display: none;
+    }
+
+    .menu-mobile {
+        display: block;
+    }
+
+    .login {
+        margin-left: 0;
+        order: 1;
+    }
+
+    .logo {
+        order: 2;
+    }
+
+    .brands-carousel {
+        padding: 20px 0;
+    }
+
+    .brands-carousel h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .brand-item {
+        min-width: 150px;
+        padding: 10px;
+    }
+
+    .brand-item img {
+        max-width: 100px;
+    }
+
+    .pesquisa {
+        width: 100%;
+    }
+}
+
+/* Para telas menores ou iguais a 991px */
 @media (max-width: 991px) {
 
     /* Ajustes para tablets */
@@ -12,10 +71,10 @@
 
     .pesquisa {
         width: 100%;
-
     }
 }
 
+/* Para telas menores ou iguais a 768px */
 @media (max-width: 768px) {
 
     /* MENU MOBILE */
@@ -54,71 +113,12 @@
         font-size: 1rem;
     }
 
-    .pesquisa {
-        width: 100%;
-    }
-
     /*TEXTO DE SERVICOS*/
     .text-servicos {
         padding: 0;
     }
-}
-
-@media (max-width: 767px) {
-
-
-    .content-section-123 {
-        padding: 40px 0;
-    }
-
-    .margem-abaixo {
-        margin-bottom: 20px;
-    }
-
-
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-
-    .menu {
-        display: none;
-
-    }
-
-    .menu-mobile {
-        display: block;
-    }
-
-
-    .login {
-        margin-left: 0;
-        order: 1;
-    }
-
-    .logo {
-        order: 2;
-    }
-
-    .brands-carousel {
-        padding: 20px 0;
-    }
-
-    .brands-carousel h2 {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-    }
-
-    .brand-item {
-        min-width: 150px;
-        padding: 10px;
-    }
-
-    .brand-item img {
-        max-width: 100px;
-    }
 
     .pesquisa {
         width: 100%;
     }
-
 }

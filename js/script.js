@@ -105,12 +105,11 @@ function handleSwipe() {
     }
 }
 
-// Autoplay (opcional - descomente para ativar)
-/*
+// Autoplay SLIDES
 setInterval(() => {
     nextSlide();
-}, 5000); // Muda de slide a cada 5 segundos
-*/
+}, 7000);
+
 
 // FIM SLIDES
 
