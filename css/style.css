@@ -335,6 +335,28 @@
 
   /*FIM CAMPO DE BUSCA*/
 
+  /*TEXTO DE SERVICOS*/
+  .text-servicos {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 0 15rem;
+  }
+
+  .text-servicos h3 {
+      font-size: 1rem;
+      color: var(--color5-black);
+      font-weight: 300;
+  }
+
+  .text-servicos a {
+      color: var(--color3-orange);
+      text-decoration: none;
+      font-weight: bold;
+  }
+
+  .text-servicos a:hover {
+      text-decoration: underline;
+  }
 
   /*CARDS DE SERVIÇOS*/
   .cards {

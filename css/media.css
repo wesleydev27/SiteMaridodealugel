@@ -55,7 +55,12 @@
     }
 
     .pesquisa {
-        width: 80%;
+        width: 100%;
+    }
+
+    /*TEXTO DE SERVICOS*/
+    .text-servicos {
+        padding: 0;
     }
 }
 
