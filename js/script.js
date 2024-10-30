@@ -4,7 +4,7 @@ AOS.init({
     once: true
 });
 
-// Menu Mobile
+// MENU MOBILE
 const menuMobile = document.querySelector('.menu-mobile');
 const menu = document.querySelector('.menu');
 
@@ -12,14 +12,14 @@ menuMobile.addEventListener('click', () => {
     menu.classList.toggle('active');
 });
 
-// Fechar menu ao clicar em um link
+// FECHAR MENU AO CLICAR EM UM LINK
 document.querySelectorAll('.menu a').forEach(link => {
     link.addEventListener('click', () => {
         menu.classList.remove('active');
     });
 });
 
-// Scroll suave
+// SCROLL SUAVE 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -30,7 +30,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-// SCRIPT slides
+// SLIDES
 const slider = document.querySelector('.slider');
 const slides = document.querySelectorAll('.banner');
 const dots = document.querySelectorAll('.slider-dot');
@@ -112,6 +112,8 @@ setInterval(() => {
 }, 5000); // Muda de slide a cada 5 segundos
 */
 
+// FIM SLIDES
+
 
 //CONTROLES DOS PRODUTOS
 const cards = document.querySelectorAll('.card');
@@ -135,5 +137,5 @@ document.getElementById('prevBtn').addEventListener('click', () => {
 
 // Inicializa a primeira carta como visível
 showCard(currentIndex);
-
+//FIM CONTROLES DOS PRODUTOS
 

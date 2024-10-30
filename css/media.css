@@ -9,6 +9,11 @@
     .lead {
         font-size: 1rem;
     }
+
+    .pesquisa {
+        width: 100%;
+
+    }
 }
 
 @media (max-width: 768px) {
@@ -36,7 +41,7 @@
 
     /* SLIDES */
     .banner h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .banner p {
@@ -48,21 +53,14 @@
         height: 30px;
         font-size: 1rem;
     }
+
+    .pesquisa {
+        width: 80%;
+    }
 }
 
 @media (max-width: 767px) {
 
-    /* COMO FUNCIONA */
-    .col-md-4 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-
-    .col-lg-8,
-    .col-md-8 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
 
     .content-section-123 {
         padding: 40px 0;
@@ -72,17 +70,14 @@
         margin-bottom: 20px;
     }
 
-    /* Visibilidade */
-    .hidden-xs {
-        display: none !important;
-    }
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
 
     .menu {
         display: none;
-        /* Esconde o menu regular em telas pequenas */
+
     }
 
     .menu-mobile {
@@ -115,6 +110,10 @@
 
     .brand-item img {
         max-width: 100px;
+    }
+
+    .pesquisa {
+        width: 100%;
     }
 
 }
