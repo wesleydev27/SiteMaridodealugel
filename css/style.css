@@ -1,694 +1,543 @@
-  /*RESET*/
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: poppins, sans-serif;
-  }
-
-  /*PALETA DE CORES*/
-  :root {
-      --color1-blue: #003398;
-      --color2-white: #ffffff;
-      --color3-orange: #fa6502;
-      --color4-green: #3caa0e;
-      --color5-black: #2c3e50;
-      --color6-cinza: #7f8c8d;
-      --color-cinzaclaro: #f7f7f7;
-  }
-
-  body {
-      background: var(--color-cinzaclaro);
-      color: var(--color5-black);
-  }
-
-
-
-  /*HEADER CABEÇALHO*/
-  header {
-      background-color: var(--color1-blue);
-      padding: 3px 0;
-      position: fixed;
-      width: 100%;
-      z-index: 1000;
-  }
-
-  /*MENU*/
-  nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 0.8rem;
-  }
-
-  /*LOGOTIPO*/
-  .logo img {
-      width: 27%;
-      padding: 0.1rem;
-      cursor: pointer;
-  }
-
-  /*MENU*/
-  .menu {
-      display: flex;
-      gap: 2rem;
-  }
-
-  .menu a {
-      color: var(--color3-orange);
-      text-decoration: none;
-      transition: color 0.3s;
-  }
-
-  .menu a:hover {
-      color: var(--color2-white);
-  }
-
-  /* LINK DE LOGIN */
-  .menu a i {
-      margin-right: 0.4rem;
-      font-size: 1.2rem;
-  }
-
-  /**MENU MOBILE*/
-  .menu-mobile {
-      display: none;
-      cursor: pointer;
-      color: var(--color3-orange);
-      font-size: 1rem;
-      padding: 0 1rem;
-  }
-
-  /*SLIDES */
-  .slider-container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-  }
-
-  .slider {
-      display: flex;
-      width: 300%;
-      height: 100%;
-      transition: transform 0.5s ease-in-out;
-  }
-
-  .banner {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-      background: rgba(0, 0, 0, 0.5);
-      width: 100%;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-  }
-
-  .banner.active {
-      opacity: 1;
-  }
-
-  .banner h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: var(--color2-white);
-  }
-
-  .banner p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      color: var(--color2-white);
-  }
-
-  /*BOTÕES CORES PADRÃO*/
-  .btn {
-      background-color: var(--color3-orange);
-      color: var(--color2-white);
-      padding: 0.5rem 2rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      text-decoration: none;
-      opacity: 0.9;
-  }
-
-  /*EFEITO HOVER BOTÕES*/
-  .btn:hover {
-      opacity: 1;
-  }
-
-  .slider-container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-  }
-
-  .slider {
-      display: flex;
-      width: 300%;
-      height: 100%;
-      transition: transform 0.5s ease-in-out;
-  }
-
-  .banner {
-      position: relative;
-      height: 100vh;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-  }
-
-  .banner.active {
-      opacity: 1;
-  }
-
-  /* Estilo para as imagens de fundo */
-  .banner::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      z-index: -1;
-  }
-
-  /* Overlay escuro para melhorar legibilidade do texto */
-  .banner::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: -1;
-  }
-
-  /* IMAGENS PARA CADA BANNER */
-  .banner:nth-child(1)::before {
-      background-image: url('../img/slider/Chuveiro1.webp');
-  }
-
-  .banner:nth-child(2)::before {
-      background-image: url('../img/slider/Reparos1.jpg');
-  }
-
-  .banner:nth-child(3)::before {
-      background-image: url('../img/slider/Qualidade1.webp');
-  }
-
-  .banner-content {
-      position: relative;
-      z-index: 1;
-      padding: 2rem;
-      max-width: 800px;
-  }
-
-  .banner h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: var(--color2-white);
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
-
-  .banner p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      color: var(--color2-white);
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  }
-
-  .slider-controls {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 1rem;
-      z-index: 10;
-  }
-
-  .slider-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background-color: var(--color2-white);
-      cursor: pointer;
-      opacity: 0.5;
-      transition: opacity 0.3s;
-  }
-
-  .slider-dot.active {
-      opacity: 1;
-  }
-
-  .slider-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40px;
-      height: 40px;
-      background-color: var(--color3-orange);
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color2-white);
-      font-size: 1.5rem;
-      opacity: 0.9;
-      z-index: 10;
-  }
-
-  .slider-arrow:hover {
-      opacity: 1;
-  }
-
-  .slider-arrow.prev {
-      left: 1.2rem;
-  }
-
-  .slider-arrow.next {
-      right: 1.2rem;
-  }
-
-  /*FIM DOS SLIDES */
-
-
-  /*SERVIÇOS*/
-  .servicos {
-      padding: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-  }
-
-  .servicos h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 3rem;
-      color: var(--color3-orange);
-  }
-
-  /*CAMPO DE BUSCA*/
-  .pesquisa {
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-      margin-bottom: 3rem;
-      width: 50%;
-  }
-
-  .pesquisa input {
-      width: 100%;
-      padding: 10px 40px 10px 15px;
-      border: 1px solid var(--color-cinzaclaro);
-      outline: none;
-      border-radius: 4px;
-      font-size: 1em;
-  }
-
-  .pesquisa i {
-      position: absolute;
-      right: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--color3-orange);
-      font-size: 1em;
-      cursor: pointer;
-  }
-
-  /*FIM CAMPO DE BUSCA*/
-
-  /*TEXTO DE SERVICOS*/
-  .text-servicos {
-      text-align: center;
-      margin-bottom: 3rem;
-      padding: 0 15rem;
-  }
-
-  .text-servicos h3 {
-      font-size: 1rem;
-      color: var(--color5-black);
-      font-weight: 300;
-  }
-
-  .text-servicos a {
-      color: var(--color3-orange);
-      text-decoration: none;
-      font-weight: bold;
-  }
-
-  .text-servicos a:hover {
-      text-decoration: underline;
-  }
-
-  /*CARDS DE SERVIÇOS*/
-  .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-  }
-
-  .card {
-      min-height: 300px;
-      background-color: var(--color2-white);
-      padding: 2rem;
-      border-radius: 10px;
-      text-align: center;
-      transition: transform 0.3s;
-      cursor: pointer;
-      position: relative;
-  }
-
-  .card:hover {
-      transform: translateY(-10px);
-  }
-
-  .card img {
-      width: 200px;
-      height: 200px;
-      border-radius: 2%;
-      margin-bottom: 1rem;
-  }
-
-  .card h3,
-  h5 {
-      font-size: 1rem;
-      text-align: left;
-      font-weight: 300;
-      color: var(--color6-cinza);
-  }
-
-  .card h5 {
-      color: var(--color3-orange);
-      margin-bottom: 1rem;
-      font-size: 0.8rem;
-  }
-
-  /*BOTÃO SOLICITE AGORA*/
-  .solicite-agora {
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease;
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background-color: var(--color3-orange);
-      color: var(--color2-white);
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-  }
-
-  .card:hover .solicite-agora {
-      opacity: 1;
-      visibility: visible;
-  }
-
-  /*FIM DOS SERVIÇOS*/
-
-
-
-  /*SOBRE SERVIÇOS*/
-  .about-servicos {
-      padding: 2rem 1rem;
-      text-align: center;
-      background-color: var(--color2-white);
-  }
-
-  .about-servicos h2 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-  }
-
-  .about-servicos h3 {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-      color: var(--color3-orange);
-  }
-
-  .cards-2 {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.4rem;
-  }
-
-  .card-2 {
-      background-color: var(--color2-white);
-      border: 2px solid var(--color-cinzaclaro);
-      border-radius: 10px;
-      padding: 1.5rem;
-      text-align: center;
-      width: 100%;
-      max-width: 300px;
-      transition: transform 0.3s;
-      cursor: pointer;
-  }
-
-  .card-2 i {
-      font-size: 2rem;
-      color: var(--color3-orange);
-      margin-bottom: 1rem;
-  }
-
-  .card-2 h4 {
-      font-size: 1.2rem;
-      margin: 0.5rem 0;
-  }
-
-  .card-2 h5 {
-      font-size: 0.9rem;
-      color: var(--color6-cinza);
-  }
-
-  .card-2:hover {
-      transform: translateY(-5px);
-  }
-
-  /*FIM DO SOBRE SERVIÇOS*/
-
-
-  /*MARCAS*/
-  .brands-carousel {
-      background: var(--color2-white);
-      padding: 40px 0;
-      overflow: hidden;
-      position: relative;
-  }
-
-  .brands-track {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      animation: scroll 30s linear infinite;
-      width: calc(200px * 14);
-  }
-
-  .brands-track:hover {
-      animation-play-state: paused;
-  }
-
-  .brand-item {
-      min-width: 200px;
-      padding: 20px;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-  }
-
-  .brand-item img {
-      max-width: 150px;
-      height: auto;
-      filter: grayscale(100%);
-      transition: filter 0.3s ease;
-      object-fit: contain;
-      max-height: 100px;
-  }
-
-  .brand-item:hover img {
-      filter: grayscale(0%);
-  }
-
-  .brands-carousel::before,
-  .brands-carousel::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      width: 100px;
-      height: 100%;
-      z-index: 2;
-  }
-
-  .brands-carousel::before {
-      left: 0;
-      background: linear-gradient(to right, var(--color2-white) 0%, transparent 100%);
-  }
-
-  .brands-carousel::after {
-      right: 0;
-      background: linear-gradient(to left, var(--color2-white) 0%, transparent 100%);
-  }
-
-  @keyframes scroll {
-      0% {
-          transform: translateX(0);
-      }
-
-      100% {
-          transform: translateX(calc(-200px * 7));
-      }
-  }
-
-  /*FIM DOS MARCAS*/
-
-
-  /*COMO FUNCIONA*/
-  .como-funciona {
-      padding: 5rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-  }
-
-  .como-funciona h2 {
-      text-align: center;
-      font-size: 2rem;
-
-      color: var(--color3-orange);
-  }
-
-  .como-funciona h3 {
-      text-align: center;
-      font-size: 1rem;
-      margin-bottom: 2rem;
-      color: var(--color5-black);
-  }
-
-  .cards-3 {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-  }
-
-  .card-3 {
-      background-color: var(--color2-white);
-      border: 2px solid var(--color-cinzaclaro);
-      border-radius: 10px;
-      padding: 1.5rem;
-      text-align: center;
-      width: 100%;
-      max-width: 300px;
-      transition: transform 0.3s;
-      cursor: pointer;
-  }
-
-  .card-3 i {
-      font-size: 2rem;
-      color: var(--color3-orange);
-      margin-bottom: 1rem;
-  }
-
-  .card-3 h4 {
-      font-size: 1.2rem;
-      margin: 0.5rem 0;
-  }
-
-  .card-3 h5 {
-      font-size: 0.9rem;
-      color: var(--color6-cinza);
-  }
-
-  .card-3:hover {
-      transform: translateY(-5px);
-  }
-
-  /*FIM DO COMO FUNCIONA*/
-
-
-  /*VOLTE AO TOPO*/
-  #backToTopBtn {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: var(--color3-orange);
-      color: var(--color2-white);
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      opacity: 0;
-      z-index: 1000;
-  }
-
-  #backToTopBtn.visible {
-      display: block;
-      opacity: 1;
-  }
-
-  #backToTopBtn:hover {
-      background-color: var(--color1-blue);
-      transform: translateY(-3px);
-  }
-
-  #backToTopBtn::after {
-      content: "↑";
-      font-size: 24px;
-      line-height: 50px;
-      display: block;
-      text-align: center;
-  }
-
-
-  /*FOOTER RODAPÉ*/
-  footer {
-      background-color: var(--color1-blue);
-      padding: 2rem;
-      text-align: center;
-      color: var(--color2-white);
-  }
-
-
-  /*CONTATO 
-  .contato {
-      padding: 5rem 2rem;
-      background-color: var(--color2-white);
-  }
-
-  .contato-container {
-      max-width: 600px;
-      margin: 0 auto;
-  }
-
-  .form-group {
-      margin-bottom: 1rem;
-  }
-
-  input,
-  textarea {
-      width: 100%;
-      padding: 0.8rem;
-      border: none;
-      border-radius: 5px;
-      margin-top: 0.5rem;
-  } */
+/*SLIDES */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 10;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--color2-white);
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.slider-dot.active {
+    opacity: 1;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: var(--color3-orange);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color2-white);
+    font-size: 1.5rem;
+    opacity: 0.9;
+    z-index: 10;
+}
+
+.slider-arrow:hover {
+    opacity: 1;
+}
+
+.slider-arrow.prev {
+    left: 1.2rem;
+}
+
+.slider-arrow.next {
+    right: 1.2rem;
+}
+
+
+.banner {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.banner.active {
+    opacity: 1;
+}
+
+/* Estilo para as imagens de fundo */
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+/* Overlay escuro para melhorar legibilidade do texto */
+.banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* IMAGENS PARA CADA BANNER */
+.banner:nth-child(1)::before {
+    background-image: url('../img/slider/Chuveiro1.webp');
+}
+
+.banner:nth-child(2)::before {
+    background-image: url('../img/slider/Reparos1.jpg');
+}
+
+.banner:nth-child(3)::before {
+    background-image: url('../img/slider/Qualidade1.webp');
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--color2-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--color2-white);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+.banner {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.banner.active {
+    opacity: 1;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--color2-white);
+}
+
+.banner p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--color2-white);
+}
+
+/*BOTÕES CORES PADRÃO*/
+.btn {
+    background-color: var(--color3-orange);
+    color: var(--color2-white);
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+/*EFEITO HOVER BOTÕES*/
+.btn:hover {
+    opacity: 1;
+}
+
+/*FIM DOS SLIDES */
+
+
+/*SERVIÇOS INDEX*/
+.servicos-index {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.servicos-index h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--color3-orange);
+}
+
+/*CAMPO DE BUSCA*/
+.pesquisa {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 3rem;
+    width: 50%;
+}
+
+.pesquisa input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid var(--color-cinzaclaro);
+    outline: none;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.pesquisa i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color3-orange);
+    font-size: 1em;
+    cursor: pointer;
+}
+
+/*FIM CAMPO DE BUSCA*/
+
+
+/*TEXTO DE SERVICOS*/
+.text-servicos {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0 15rem;
+}
+
+.text-servicos h3 {
+    font-size: 1rem;
+    color: var(--color5-black);
+    font-weight: 300;
+}
+
+.text-servicos a {
+    color: var(--color3-orange);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.text-servicos a:hover {
+    text-decoration: underline;
+}
+
+/*CARDS DE SERVIÇOS*/
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    min-height: 300px;
+    background-color: var(--color2-white);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 2%;
+    margin-bottom: 1rem;
+}
+
+.card h3,
+h5 {
+    font-size: 1rem;
+    text-align: left;
+    font-weight: 300;
+    color: var(--color6-cinza);
+}
+
+.card h5 {
+    color: var(--color3-orange);
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+}
+
+/*BOTÃO SOLICITE AGORA*/
+.solicite-agora {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--color3-orange);
+    color: var(--color2-white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card:hover .solicite-agora {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*FIM DOS SERVIÇOS*/
+
+
+
+/*SOBRE SERVIÇOS*/
+.about-servicos {
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: var(--color2-white);
+}
+
+.about-servicos h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-servicos h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--color3-orange);
+}
+
+.cards-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.card-2 {
+    background-color: var(--color2-white);
+    border: 2px solid var(--color-cinzaclaro);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.card-2 i {
+    font-size: 2rem;
+    color: var(--color3-orange);
+    margin-bottom: 1rem;
+}
+
+.card-2 h4 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.card-2 h5 {
+    font-size: 0.9rem;
+    color: var(--color6-cinza);
+}
+
+.card-2:hover {
+    transform: translateY(-5px);
+}
+
+/*FIM DO SOBRE SERVIÇOS*/
+
+
+/*MARCAS*/
+.brands-carousel {
+    background: var(--color2-white);
+    padding: 40px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.brands-track {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    animation: scroll 30s linear infinite;
+    width: calc(200px * 14);
+}
+
+.brands-track:hover {
+    animation-play-state: paused;
+}
+
+.brand-item {
+    min-width: 200px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.brand-item img {
+    max-width: 150px;
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    object-fit: contain;
+    max-height: 100px;
+}
+
+.brand-item:hover img {
+    filter: grayscale(0%);
+}
+
+.brands-carousel::before,
+.brands-carousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+}
+
+.brands-carousel::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color2-white) 0%, transparent 100%);
+}
+
+.brands-carousel::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color2-white) 0%, transparent 100%);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-200px * 7));
+    }
+}
+
+/*FIM DOS MARCAS*/
+
+
+/*COMO FUNCIONA*/
+.como-funciona {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.como-funciona h2 {
+    text-align: center;
+    font-size: 2rem;
+
+    color: var(--color3-orange);
+}
+
+.como-funciona h3 {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: var(--color5-black);
+}
+
+.cards-3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.card-3 {
+    background-color: var(--color2-white);
+    border: 2px solid var(--color-cinzaclaro);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.card-3 i {
+    font-size: 2rem;
+    color: var(--color3-orange);
+    margin-bottom: 1rem;
+}
+
+.card-3 h4 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.card-3 h5 {
+    font-size: 0.9rem;
+    color: var(--color6-cinza);
+}
+
+.card-3:hover {
+    transform: translateY(-5px);
+}
+
+/*FIM DO COMO FUNCIONA*/

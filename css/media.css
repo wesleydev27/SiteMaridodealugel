@@ -122,3 +122,29 @@
         width: 100%;
     }
 }
+
+
+/*COLOCAR NAS MEDIAS QUERYS*/
+/* Para tablets */
+@media screen and (max-width: 1024px) {
+    .banner-eletrica {
+        background-image: url('../img/slider/banners-services/Banner-eletrica-tablet.jpg');
+        height: 25vh;
+    }
+}
+
+/* Para smartphones */
+@media screen and (max-width: 768px) {
+    .banner-eletrica {
+        background-image: url('../img/slider/banners-services/Banner-eletrica-mobile.jpg');
+        height: 20vh;
+    }
+}
+
+/* Para telas retina (alta densidade de pixels) */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .banner-eletrica {
+        background-image: url('../img/slider/banners-services/Banner-eletrica-retina.jpg');
+    }
+}
